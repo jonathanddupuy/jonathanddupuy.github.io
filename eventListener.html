@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+     <p id="text">Silly Little Guy</p>
+     <p id="number">1</p> 
+
+    <img id="Cat"
+        src="https://static.wikia.nocookie.net/silly-cat/images/3/33/Noopy.png/revision/latest/thumbnail/width/360/height/360?cb=20231201205915"
+        >
+
+
+</body>
+
+</html>
+
+
+
+<script>
+    document.getElementById("Cat").addEventListener("click", cat)
+    function cat() {
+        alert("cat")
+    }
+    document.getElementById("text").addEventListener("click", thing)
+
+    function thing() {
+        document.getElementById("text").style.color = "blue"
+    }
+
+    document.getElementById("Cat").addEventListener("mouseover", size)
+    function size(){
+        document.getElementById("Cat").width = "1910", height = "865"
+    } 
+    document.getElementById("number").addEventListener("click",up)
+ var score = 0
+  function up() {
+    score = score + 1
+    document.getElementById("number").innerHTML = +score
+     console.log(score)
+  }
+ 
+</script>
