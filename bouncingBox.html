@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        div {
+            height: 30px;
+            width: 30px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+</body>
+
+</html>
+<script>
+    setInterval(moveBox, 16);
+    var leftPosition = 100
+    var topPosition = 100
+    var xSpeed = 5
+    var ySpeed = 3
+    document.getElementById("box").addEventListener("click", boxSpeed)
+    function moveBox() {
+        //when box is clicked, increase positon by 5//
+        leftPosition = leftPosition + xSpeed
+        topPosition = topPosition + ySpeed
+        document.getElementById("box").style.left = leftPosition + "px"
+        document.getElementById("box").style.top = topPosition + "px"
+        //if reach boarder, decrease dircetion by 5//
+        if (leftPosition < 2375) {
+            xSpeed = -xSpeed
+        }
+        if (leftPosition > 0) {
+            xSpeed = -xSpeed
+        }
+        if (topPosition < 0) {
+            ySpeed = -ySpeed
+        }
+        if (topPosition > 1100) {
+            ySpeed = -ySpeed
+        }
+    }
+    function boxSpeed() {
+        //when click, postion +5 or -5//
+        //if xspeed > 0 
+        if (xSpeed > 0) {
+            xSpeed = xSpeed + 5
+        }
+        if (xSpeed < 0) {
+            xSpeed = xSpeed - 5
+        }
+        if (ySpeed > 0){
+            ySpeed = ySpeed + 5
+        }
+        if (ySpeed < 0){
+            ySpeed = ySpeed - 5
+        }
+
+    }
+</script>
