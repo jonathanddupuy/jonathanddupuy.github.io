@@ -21,6 +21,7 @@ var init = function (window) {
 
         // TODO 1 : Declare and initialize our variables
         var circles = []
+        var circle
 
 
         // TODO 2 : Create a function that draws a circle 
@@ -36,7 +37,7 @@ var init = function (window) {
 
 
         // TODO 7 : Use a loop to create multiple circles
-        for (var i = 0; i < 25; i++) {
+        for (var i = 0; i < 100; i++) {
             drawCircle();
         }
 
@@ -73,13 +74,13 @@ var init = function (window) {
                 circle.x = 0;
             }
             if (circle.x < 0) {
-                circle.x = 800
+                circle.x = canvas.width
             }
             if (circle.y > canvas.height) {
                 circle.y = 0
             }
             if (circle.y <  0) {
-                circle.y = 400
+                circle.y = canvas.height
             }
 
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
@@ -96,12 +97,12 @@ var init = function (window) {
 
         view.addChild(fps);
         app.addUpdateable(fps);
-
+        
         game.circle = circle;
         game.circles = circles;
         game.drawCircle = drawCircle;
         game.update = update;
-
+        
         app.addUpdateable(window.opspark.game);
     }
 };
